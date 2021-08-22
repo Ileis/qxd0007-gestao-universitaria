@@ -33,12 +33,17 @@ public class RHService implements IRHService {
         }
     }
 
-    private HashMap<String, Funcionario> folhaDePagamento = new HashMap<String, Funcionario>();
-    private HashMap<Funcionario, Bonus> bonus = new HashMap<Funcionario, Bonus>();
+    private HashMap<String, Funcionario> folhaDePagamento;
+    private HashMap<Funcionario, Bonus> bonus;
     private final double SALARIO_STA_MAXIMO = 1000 + 100 * 30;
     private final double DIARIA = 100;
     private final double DIARIA_MAXIMA_PROF = DIARIA * 3;
     private final double DIARIA_MAXIMA_STA = DIARIA * 1;
+
+    public RHService(){
+        folhaDePagamento = new HashMap<String, Funcionario>();
+        bonus = new HashMap<Funcionario, Bonus>();
+    }
 
     @Override
     public boolean cadastrar(Funcionario funcionario) {
